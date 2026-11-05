@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+export-template/node_modules/
+
+# Build output and generated files
+.next/
+out/
+export-template/dist/
+export-template/package-lock.json
+coverage/
+*.tsbuildinfo
+next-env.d.ts
+
+# Local app state: repo snapshots, cached maps, Agent SDK config dir
+.retigram/
+
+# Secrets (the example file is committed)
+.env
+.env*.local
+!.env.local.example
+
+# Claude Code local settings and session data
+.claude/
+CLAUDE.local.md
+
+# OS, editors, logs
+.DS_Store
+.vscode/
+.idea/
+*.log
+npm-debug.log*

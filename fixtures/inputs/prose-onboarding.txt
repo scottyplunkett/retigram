@@ -1,0 +1,1 @@
+When a new hire accepts an offer, HR creates their profile. IT then provisions a laptop and accounts in parallel with the manager scheduling a first-week plan. Once both are done, the new hire attends orientation. If orientation feedback is negative, HR follows up; otherwise onboarding is complete.

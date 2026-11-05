@@ -1,0 +1,133 @@
+{
+  "title": "Order fulfilment",
+  "direction": "LR",
+  "nodes": [
+    {
+      "id": "lane-sales",
+      "label": "Sales",
+      "shape": "group",
+      "parentId": null,
+      "x": 0,
+      "y": 0,
+      "width": 700,
+      "height": 200,
+      "color": null
+    },
+    {
+      "id": "lane-ops",
+      "label": "Operations",
+      "shape": "group",
+      "parentId": null,
+      "x": 0,
+      "y": 240,
+      "width": 700,
+      "height": 200,
+      "color": null
+    },
+    {
+      "id": "start",
+      "label": "Order received",
+      "shape": "ellipse",
+      "parentId": "lane-sales",
+      "x": 40,
+      "y": 70,
+      "width": null,
+      "height": null,
+      "color": null
+    },
+    {
+      "id": "in-stock",
+      "label": "In stock?",
+      "shape": "diamond",
+      "parentId": "lane-sales",
+      "x": 260,
+      "y": 60,
+      "width": null,
+      "height": null,
+      "color": null
+    },
+    {
+      "id": "ship",
+      "label": "Ship order",
+      "shape": "rectangle",
+      "parentId": "lane-ops",
+      "x": 260,
+      "y": 310,
+      "width": null,
+      "height": null,
+      "color": "#dcfce7"
+    },
+    {
+      "id": "db",
+      "label": "Inventory DB",
+      "shape": "cylinder",
+      "parentId": "lane-ops",
+      "x": 520,
+      "y": 290,
+      "width": null,
+      "height": null,
+      "color": null
+    },
+    {
+      "id": "backorder",
+      "label": "Backorder",
+      "shape": "rounded",
+      "parentId": "lane-sales",
+      "x": 480,
+      "y": 80,
+      "width": null,
+      "height": null,
+      "color": null
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "start",
+      "target": "in-stock",
+      "label": null,
+      "directed": true,
+      "bidirectional": false,
+      "style": "solid"
+    },
+    {
+      "id": "e2",
+      "source": "in-stock",
+      "target": "ship",
+      "label": "yes",
+      "directed": true,
+      "bidirectional": false,
+      "style": "solid"
+    },
+    {
+      "id": "e3",
+      "source": "in-stock",
+      "target": "backorder",
+      "label": "no",
+      "directed": true,
+      "bidirectional": false,
+      "style": "solid"
+    },
+    {
+      "id": "e4",
+      "source": "ship",
+      "target": "db",
+      "label": "update",
+      "directed": false,
+      "bidirectional": true,
+      "style": "dashed"
+    },
+    {
+      "id": "e5",
+      "source": "ship",
+      "target": "missing",
+      "label": null,
+      "directed": true,
+      "bidirectional": false,
+      "style": "solid"
+    }
+  ],
+  "figures": [],
+  "suggestions": [],
+  "warnings": []
+}

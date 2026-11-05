@@ -1,0 +1,7 @@
+flowchart TD
+  A[Order received] --> B{In stock?}
+  B -- yes --> C[Pick and pack]
+  B -- no --> D[Backorder]
+  C --> E[(Inventory DB)]
+  C --> F([Shipped])
+  D -.-> B

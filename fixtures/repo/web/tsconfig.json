@@ -1,0 +1,4 @@
+{
+  // comment allowed
+  "compilerOptions": { "baseUrl": ".", "paths": { "@lib/*": ["src/lib/*"] } },
+}
